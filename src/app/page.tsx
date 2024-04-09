@@ -43,7 +43,7 @@ export default function Home() {
             weather.main ? <p>Hi</p> : <p>Bye</p>
         } 
 
-      <Link href='/ssr'>
+      <Link href='/weather'>
           ssr
       </Link>
     </>
