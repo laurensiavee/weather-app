@@ -26,7 +26,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>{url}</h1>
+      {/* <h1>{url}</h1> */}
       <form onSubmit={fetchWeather}>
         <div>
           <input
