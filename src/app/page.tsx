@@ -3,31 +3,28 @@
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function Home() {
   const [city, setCity] = useState("")
-  const [weather, setWeather] = useState({});
 
-  const NEXT_PUBLIC_OPENWEATHERMAP_API_KEY = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY
-  const url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + NEXT_PUBLIC_OPENWEATHERMAP_API_KEY + "&units=metric"
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const router = useRouter();
 
-  const fetchWeather = (e) => {
-    e.preventDefault();
-    axios.get(url).then((response) => {
-      setWeather(response.data);
-      console.log(response.data);
-    }).catch((error) => {
-      setWeather("");
-      console.log("Error")
-    });
-    setCity('');
-  };
+  const preventDefault = f => e => {
+    e.preventDefault()
+    f(e)
+  }
+  const handleSubmit = preventDefault(() => {
+    router.push("weather/" + city,)
+  })
+
 
   return (
     <>
-      {/* <h1>{url}</h1> */}
-      <form onSubmit={fetchWeather}>
+      <form onSubmit={handleSubmit}>
         <div>
           <input
             onChange={(e) => setCity(e.target.value)}
@@ -35,17 +32,10 @@ export default function Home() {
             value= {city}
           />
         </div>
-        <button onClick={fetchWeather} className="bg-blue-300">
+        <Link  href={`/weather/${city}`}>
           search
-        </button>
+        </Link>
       </form>
-        {
-            weather.main ? <p>Hi</p> : <p>Bye</p>
-        } 
-
-      <Link href='/weather'>
-          ssr
-      </Link>
     </>
   );
 }

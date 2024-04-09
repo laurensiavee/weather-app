@@ -5,8 +5,6 @@ import { useRouter } from "next/router";
 export async function getServerSideProps(context) {
 const { id } = context.params; 
   const querySearch = {id}.id;
-  console.log("querySearch")
-  console.log(querySearch)
 
   const NEXT_PUBLIC_OPENWEATHERMAP_API_KEY = process.env.NEXT_PUBLIC_OPENWEATHERMAP_API_KEY
   const url = "https://api.openweathermap.org/data/2.5/weather?q=" + querySearch + "&appid=" + NEXT_PUBLIC_OPENWEATHERMAP_API_KEY + "&units=metric"
