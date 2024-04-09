@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
@@ -41,6 +42,10 @@ export default function Home() {
         {
             weather.main ? <p>Hi</p> : <p>Bye</p>
         } 
+
+      <Link href='/ssr'>
+          ssr
+      </Link>
     </>
   );
 }
