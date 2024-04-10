@@ -3,16 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-import SearchCity from "./component/SearchCity";
-import Header from "./component/Header";
 
-export default function Home() {
+export default function Header() {
   return (
     <>
-      <div className="">
-        <Header />
-        <SearchCity />
-      </div>
+        <nav className="px-5 py-2">
+            <Link href={`/`} className="text-white text-sm px-2">
+                    Weather
+            </Link>
+        </nav>
     </>
   );
 }

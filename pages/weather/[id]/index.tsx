@@ -23,12 +23,14 @@ export default function Home({data}) {
 
   return (
     <>
+      <div className="bg-blue-900">
         <h1>{id}</h1>
         <h1>jakarta</h1>
         
         {
             data.main ? <p>{data.main.temp}</p> : <p>Bye</p>
         } 
+      </div>
     </>
   );
 }
