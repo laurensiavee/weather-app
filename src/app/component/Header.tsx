@@ -7,11 +7,11 @@ import { useState } from "react";
 export default function Header() {
   return (
     <>
-        <nav className="px-5 py-2">
-            <Link href={`/`} className="text-white text-sm px-2">
-                    Weather
-            </Link>
-        </nav>
+      <nav className="px-5 py-3">
+        <Link href={`/`} className="text-white text-sm px-2">
+          Weather
+        </Link>
+      </nav>
     </>
   );
 }

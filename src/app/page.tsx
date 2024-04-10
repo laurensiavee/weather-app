@@ -10,8 +10,9 @@ export default function Home() {
   return (
     <>
       <div className="">
-        <Header />
-        <SearchCity />
+        <div className="w-[50%]">
+          <SearchCity />
+        </div>
       </div>
     </>
   );
