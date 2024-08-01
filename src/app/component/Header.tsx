@@ -9,7 +9,7 @@ export default function Header() {
     <>
       <nav className="px-5 py-3">
         <Link href={`/`} className="text-white text-sm px-2">
-          Weatherss
+          Weather
         </Link>
       </nav>
     </>
