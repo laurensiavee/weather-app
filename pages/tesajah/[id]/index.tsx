@@ -25,7 +25,7 @@ export default function Home({data}) {
     <>
       <div className="bg-blue-900">
         <h1>{id}</h1>
-        <h1>jakarta</h1>
+        <h1>jakartas</h1>
         
         {
             data.main ? <p>{data.main.temp}</p> : <p>Bye</p>
